@@ -1,4 +1,136 @@
-**PENDING (do not do yet, waiting on explicit go-ahead):** rename this repo to drop "redesign" from the name once the project plan is solid, and build out a full README/project plan covering everything, since this has a real chance of becoming the actual live site.
+**Repo renamed 2026-08-24** from `csa-xenia-redesign` to `csa-xenia` per instruction.
+
+**Second-pass correction:** the first crawl of this site badly undercounted the real navigation. The full top-level nav is: Home, About (a folder containing Info, Details, Testimonials, Staff, Board, Projects, Locations, Contact), Admissions, The STE[A]M Difference, Student Parent Info, News, Store, Events, Career, Military Family Resources, Donate, Partners, FAQ, Staff Links (password-protected, staff-only, correctly left inaccessible). Everything below this note reflects the corrected, thorough pass.
+
+## Site map (confirmed complete from the live nav, in order)
+
+- `/` Home
+- About folder: `/info`, `/details`, `/testimonials`, `/staff`, `/board`, `/projects`, `/locations`, `/contact`
+- `/interest` Admissions
+- `/steam` The STE[A]M Difference
+- `/student-parent` Student Parent Info
+- `/news` (paginated, 3 pages, full archive pulled below)
+- `/store`
+- `/events`
+- `/career`
+- `/military-family-resources`
+- `/donations`
+- `/partners`
+- `/faq`
+- `/staff-quicklinks` - password-protected, staff-only, correctly not accessible to us and not something to rebuild publicly
+- `/privacy-notice` - standard legal privacy policy, last updated 1/1/2025; must be reproduced verbatim if included, not paraphrased
+- Direct PDF links found on the homepage/student-parent page: `/s/2026-2027_CalendarExplanations.pdf`, `/s/4-6-2026-2027-Supply-List-2.pdf`, `/s/7-8-2026-2027-Supply-List.pdf`, `/s/HS-2026-2027-Supply-List.pdf`
+- External Raptor background-check application: `apps.raptortech.com/Apply/ODUzOTplbi1VUw==`
+
+## Address discrepancy found - needs resolving before publishing, not guessing
+
+- `/locations` lists two addresses: **135 East Church Street** (main office & 2026-27 school building, former YMCA) and **578 East Market Street** (future building, former East High School).
+- `/contact` lists a *third*, different pairing: **135 East Church Street** (Main Office) and **855 Lower Bellbrook Road, former NBA building** (labeled "Our Learning Facility").
+- These don't agree with each other on the current site itself. Don't pick one to feature without asking which is actually correct/current; this looks like the live site has its own stale-page problem (same pattern as the Sept. 1 vs. Sept. 14 date inconsistency), not something to silently resolve by guessing.
+
+## Career (from /career)
+
+Real intro copy about joining CSA's team, plus an application form. Real open positions listed for 2026-27: Fine Arts (Music), Foreign Language (Spanish), American Sign Language, Intervention Specialist, Elementary (Math, Social Studies), Middle School (Math, ELA, Social Studies, Science), 7-12 AYA (Math, ELA, Social Studies, Sciences), Teacher/Coach, Paraprofessional, Student Success Coordinator, Instructional Support Staff, Substitute Teacher, Counselor, Therapists.
+
+## Military Family Resources (from /military-family-resources)
+
+CSA-Xenia is a **Purple Star School** (Class of 2025 designation from the Ohio Department of Education and Workforce), recognizing schools that meet Ohio's Purple Star Advisory Board standards for supporting military-connected students and families. Page links to the Wright-Patterson Military & Family Readiness Center (937-257-3592, walk-in hours Mon-Fri 7:30am-4:30pm, closed weekends/federal holidays and the first Thursday of the month for training), plus MIC3 resources, Blue Star Families Dayton Chapter, Greene County Parks & Rec educational classes, Greene County ESC, and Greene County Library. **Megan Gebhart-Powell** is the named Military Family Liaison (mgebhartpowell@communitysteam.com), in addition to her Associate Director role.
+
+## Donate (from /donations)
+
+Donations run through **The Dayton Foundation**, as a component fund: **Community STE(A)M Academy-Xenia Fund #8816**. Real named Core Value donation levels (these appear to be the school's actual core values, matching staff role titles like "Dynamic Movement Coach"):
+
+- Dynamic Movement - $10,000
+- Confident Identity - $5,000
+- Creative Expression - $2,500
+- Effective Communication - $1,000
+- Holistic Thinking - $500
+- Community Service - $250
+
+A "Ways to Give" PDF is linked on the live page (URL not yet captured).
+
+## Partners (from /partners)
+
+Invites local businesses/organizations to become a "CSA-Xenia Community Partner" in one of several ways: being a "Community Expert," advertising with CSA, connecting CSA to their business network, or joining the STEAM Advisory Council. Includes a sign-up form.
+
+## FAQ (from /faq) - real answers, pulled by expanding every accordion item
+
+- **Cost:** CSA-Xenia is a tuition-free public school.
+- **District affiliation:** No. CSA-Xenia is an independent public STEAM-Designated school approved by the Ohio Department of Education, not part of the Xenia Community City School District.
+- **Who can attend:** Ohio resident (or relocating); not currently suspended/expelled; not subject to disciplinary exclusion for weapons/violence/drugs; in good standing (defined by participation/conduct, not grades).
+- **Transportation:** within a 30-minute bus-ride radius of a student's home-district school, the home district must provide bussing or financial compensation to/from CSA-Xenia (similar to Greene County Career Center's arrangement).
+- **Sports/clubs:** CSA can't replicate sports already offered by the home-based district, but offers Esports, Competitive Jump Roping, Design Challenges, Baking Cookoffs, Drone Racing, and plans Fine Arts/4-H/Amateur Radio clubs based on student interest.
+- **Mobile phone/internet policy and uniforms:** governed by Section 4 of the Student-Parent Handbook and the Policy Manual of the Governing Authority (both real linked documents, not yet downloaded).
+- **Calendar/school hours:** 2026-2027 Calendar and Explanations (PDF, linked above); school day 7:45am-2:45pm.
+- **2026-27 supply list:** marked "TBD" on the live FAQ itself (inconsistent with the PDFs already linked elsewhere on the site - another real internal inconsistency, not ours to silently fix by picking one).
+- **Grade rollout timeline:** grades 6-9 began the first year, 2023-24; grades 3-4 added 2025-26; the inaugural graduating class is Year 4 (2026-27); K-3 is anticipated after the Church Street transition completes.
+- **Volunteering:** a "robust volunteer system" via Community Experts, overseen by a "Community Enterprise office."
+- **Typical day / instruction:** points to a real blog post, "What is STEAM Learning?", which itself links to an "Update Dayton with Danielle" interview with founder Jeremy Ervin.
+- **Project-based learning detail:** teachers pre-assess students, then group them for cross-discipline projects with explicit instruction mixed in when it's the most effective strategy.
+- **Grading:** ongoing, multi-method assessment throughout unit-based projects (discussions, interviews, writing, performances), not single quizzes/tests.
+- **State testing:** yes, CSA-Xenia is a public school and administers the required Ohio state tests.
+- **View on standardized tests:** real quoted philosophy, values them as one measure among many, prioritizes creativity/problem-solving/collaboration alongside meeting state standards.
+- **College prep:** uses Ohio's College Credit Plus program; different graduation pathways offer different numbers of CCP options.
+- **Board input:** via the Partners page or Contact.
+- **School lunch:** real sample week menu - chicken nuggets & soft pretzel, tacos, egg rolls with chicken and rice, turkey wrap, meatball sandwich; every meal includes a vegetable, fruit, and milk. Participates in the National School Lunch Program.
+- **Screen time:** technology used "with purpose," heavier at the start of the year for platform onboarding, balanced with hands-on/group work as the year progresses.
+- **Disadvantaged Pupil Impact Aid / Student Wellness and Success Funds Plan:** references "this report" (a linked document, not yet captured).
+- **Before/after care:** evaluated annually based on demonstrated family demand; available for an additional fee.
+
+## Contact page (from /contact) - note the address discrepancy above
+
+Lists "Our Main Office Location" (135 East Church Street, former YMCA) and "Our Learning Facility" (855 Lower Bellbrook Road, former NBA building) side by side, plus phone (937) 800-CSA0 (2720) - the real site uses this "spells CSA0" mnemonic phrasing for the phone number. A general contact form follows (Name, Email, Subject, Message).
+
+## Complete real news archive (all 3 pages, oldest to newest)
+
+This is the full history, not a sample. Author names are real and vary (not always Kim Haines, corrected from the earlier pass):
+
+- 1/17/22 - What is STEAM learning? - Jason Hubbard
+- 1/24/22 - Ready...Set...Fail! - Dr. Bob Chasnov
+- 2/1/22 - Being a Champion for the Sense of Wonder - Dr. Jeremy Ervin
+- 2/10/22 - Words Describing School - Jason Hubbard
+- 2/18/22 - "Ahh, Science...Music to my ears!" - Dr. Kezia Curry
+- 5/2/22 - Custom Has No Limits - Jason Hubbard
+- 7/11/22 - CSA-Xenia Opening Delayed to Fall 2023 - Dr. Jeremy Ervin
+- 10/31/22 - Cooperative Learning...Worth All the Fuss? - Jason Hubbard
+- 2/14/23 - Leveraging Project Based Learning with Shark Tank - Dr. Lorri Ague
+- 2/21/23 - Transforming Education: Uncovering the Innovative Philosophy of Community STE(A)M Academy (CSA) - Xenia - Dr. Jeremy Ervin
+- 3/29/23 - Making a Life-Long Impact - Dr. Lorri Ague
+- 4/1/23 - Why CSA-Xenia Needs Your Support: A Message from Our Team - Dr. Jeremy Ervin
+- 4/26/23 - Why Consider Community STE(A)M Academy - Xenia? - Dr. Lorri Ague
+- 6/12/23 - BOLDLY Creating STEM/STEAM Learning Alternative - Dr. Lorri Ague
+- 8/2/23 - A PURPOSEFUL Career - Dr. Lorri Ague
+- 5/4/25 - Insight into CSA's Unique Approach to Student Learning and Success - Dr. Jeremy Ervin
+- 11/7/25 - Veterans Day Ceremony - Tuesday, Nov. 11 - Kim Haines
+- 11/17/25 - CSA Honored Veterans with a Flag Retirement Ceremony - Kim Haines
+- 12/4/25 - Tailored Learning: What Does It Truly Mean? - Christy Brock
+- 12/4/25 - Building Tomorrow's Problem-Solvers with Lowes-Xenia - Kim Haines
+- 12/8/25 - Give the Gift of School Spirit - Kim Haines
+- 1/7/26 - Mr. Hawkins Awarded Prestigious Fellowship - Kim Haines
+- 2/19/26 - Student-Led Conferences: Helping Your Child Build Confidence, Ownership, and Voice - Jeremy Ervin
+- 2/19/26 - Learning that Starts with Real-World Application - Kim Haines
+- 3/10/26 - Students Can Learn to Laugh, Create and Take the Stage - Kim Haines
+- 3/13/26 - Our First CSA Pep Rally Was a Blast! - Kim Haines
+- 4/7/26 - Students Participate in Cybersecurity Contest - Kim Haines
+- 4/20/26 - CSA Student Council Raises Funds with "Pie in the Eye" Contest - Kim Haines
+- 4/23/26 - From Land to Legacy - Kim Haines
+- 4/27/26 - Military Connected Students Honored with a Purple Up! Day - Kim Haines
+- 5/5/26 - Celebrating the Minds Behind the Makers (Teacher and Staff Appreciation Week 2026) - Kim Haines
+- 5/8/26 - Students Compete in State Cooking Competition - Kim Haines
+- 5/11/26 - STATE CHAMPIONS! - Kim Haines
+- 5/21/26 - Community STE[A]M Academy Brings Home State Title Championship - Kim Haines
+- 6/10/26 - A New Chapter in the Heart of Xenia for CSA - Kim Haines
+- 6/12/26 - CSA Teachers Attend Ohio STEM Innovation Summit - Kim Haines
+- 6/16/26 - Last Day of School Celebrated - Kim Haines
+- 7/14/26 - Families Invited to Learn More at Enrollment Information Meeting - Kim Haines
+- 7/24/26 - Creating Calm, Building Strength: More Than a Room-A Way Back - Kim Haines
+- 8/4/26 - Welcome Our New Intervention Specialist - Kim Haines
+- 8/10/26 - New ELA Teacher/Coach Introduced - Kim Haines
+- 8/12/26 - Welcome Our Math Student Teacher - Kim Haines
+- 8/18/26 - A Familiar Face Joins the CSA Team - Kim Haines
+- 8/21/26 - New First Day of School & Orientation Date - Kim Haines (full text captured below)
+
+That's 42 real posts spanning January 2022 through August 2026, the school's entire public news history. Only the Sept. 14 date-change article and the Lunar Recovery Mission project have had their full body text captured so far; the rest are headline/author/date only.
 
 # CSA-Xenia content inventory
 
@@ -45,31 +177,7 @@ Everything real, pulled directly from communitysteam.com on 2026-08-24. This is 
 
 **Curriculum bullet points (from /info):** all subjects taught; 21st-century skills; linking to community; "Learn HOW to think, not WHAT to think"; Workforce Direct; college & career readiness; innovative curriculum.
 
-## Real news history (from /news, most recent first; author is always Kim Haines unless noted)
-
-- 8/21/26 - New First Day of School & Orientation Date (full text captured above/below)
-- 8/18/26 - A Familiar Face Joins the CSA Team
-- 8/12/26 - Welcome Our Math Student Teacher
-- 8/10/26 - New ELA Teacher/Coach Introduced
-- 8/4/26 - Welcome Our New Intervention Specialist
-- 7/24/26 - Creating Calm, Building Strength: More Than a Room-A Way Back
-- 7/14/26 - Families Invited to Learn More at Enrollment Information Meeting
-- 6/16/26 - Last Day of School Celebrated
-- 6/12/26 - CSA Teachers Attend Ohio STEM Innovation Summit
-- 6/10/26 - A New Chapter in the Heart of Xenia for CSA
-- 5/21/26 - Community STE[A]M Academy Brings Home State Title Championship
-- 5/11/26 - STATE CHAMPIONS!
-- 5/8/26 - Students Compete in State Cooking Competition
-- 5/5/26 - Celebrating the Minds Behind the Makers (Teacher and Staff Appreciation Week 2026)
-- 4/27/26 - Military Connected Students Honored with a Purple Up! Day
-- 4/23/26 - From Land to Legacy
-- 4/20/26 - CSA Student Council Raises Funds with "Pie in the Eye" Contest
-- 4/7/26 - Students Participate in Cybersecurity Contest
-- 3/13/26 - Our First CSA Pep Rally Was a Blast!
-- 3/10/26 - Students Can Learn to Laugh, Create and Take the Stage
-- (older posts exist beyond this list, not yet pulled)
-
-Only one article's full body text has been captured so far (below). The rest are headline-only until their full text is pulled or provided.
+See the complete 42-post news archive further below (all three pagination pages pulled). Only two articles' full body text has been captured so far: the date-change announcement (below) and the Lunar Recovery Mission project. Everything else in the archive is headline/author/date only until pulled or provided in full.
 
 ### Full text: "New First Day of School & Orientation Date" (Aug 21, 2026, Kim Haines)
 
@@ -218,4 +326,11 @@ Repeated across /info, /about, /student-parent: volunteers ("Community Experts")
 - The full "Lunar Recovery Mission" article past the ~4000-character mark captured so far
 - Photos for the 5 staff and 1 board member the live site itself has no photo for (April Haddix, Robin Reasoner, Scott Hawkins, Michael Bott, Devin Hatfield, Dr. Kurtz Miller) - these don't exist yet even on the current site, not something we're missing on our end
 - More real photos of classrooms, students at work, and daily school life beyond what's already saved (nothing here should ever use stock or AI-generated images of "students" standing in for this real school)
-- The actual "2026-2027 Calendar and Explanations" PDF and the three supply list PDFs (4th-6th, 7th-8th, high school), to link directly rather than reference vaguely
+- The 4 real PDFs are now directly linked (calendar + 3 supply lists), but haven't been downloaded and saved locally yet the way the images were
+- Full body text for 40 of the 42 real news articles (only the Sept. 14 date-change post and a partial Lunar Recovery Mission pull are done)
+- The rest of the Lunar Recovery Mission article past the ~4000-character mark
+- **The address discrepancy between /locations and /contact needs a real answer from someone at the school, not a guess** - this can't be silently resolved
+- The Student-Parent Handbook (Section 4) and the Policy Manual of the Governing Authority, both referenced repeatedly (uniforms, phone policy, board meeting access) but not yet downloaded
+- The "Ways to Give" PDF referenced on the Donate page
+- The Disadvantaged Pupil Impact Aid / Student Wellness and Success Funds Plan report referenced in the FAQ
+- Whatever's actually on the "What is STEAM Learning?" blog post and its linked "Update Dayton with Danielle" interview with Jeremy Ervin, referenced from the FAQ as the real answer to "what does a typical day look like"

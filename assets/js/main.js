@@ -212,12 +212,6 @@ if (calendarEl) {
     .then((res) => res.json())
     .then((data) => {
       events = data;
-      const upcoming = events.find((ev) => new Date(ev.date + 'T00:00:00') >= new Date(today.getFullYear(), today.getMonth(), today.getDate()));
-      if (upcoming) {
-        const d = new Date(upcoming.date + 'T00:00:00');
-        viewYear = d.getFullYear();
-        viewMonth = d.getMonth();
-      }
       renderCalendar();
     })
     .catch(() => renderCalendar());
@@ -276,7 +270,21 @@ if (calendarEl) {
     }
     if (eventList) {
       if (monthEvents.length === 0) {
-        eventList.innerHTML = '<p class="calendar-empty-note">No events scheduled this month yet.</p>';
+        const cursor = new Date(viewYear, viewMonth, 1);
+        const next = events
+          .map((ev) => new Date(ev.date + 'T00:00:00'))
+          .filter((d) => d > cursor)
+          .sort((a, b) => a - b)[0];
+        if (next) {
+          eventList.innerHTML = `<p class="calendar-empty-note">No events scheduled this month. <button type="button" class="calendar-jump-link" data-year="${next.getFullYear()}" data-month="${next.getMonth()}">See ${monthNames[next.getMonth()]} ${next.getFullYear()} &rarr;</button></p>`;
+          eventList.querySelector('.calendar-jump-link')?.addEventListener('click', (e) => {
+            viewYear = Number(e.target.dataset.year);
+            viewMonth = Number(e.target.dataset.month);
+            renderCalendar();
+          });
+        } else {
+          eventList.innerHTML = '<p class="calendar-empty-note">No events scheduled this month.</p>';
+        }
       } else {
         eventList.innerHTML = monthEvents.map((ev) => {
           const d = new Date(ev.date + 'T00:00:00');
@@ -299,14 +307,14 @@ if (calendarEl) {
   });
 }
 
-// Form submission feedback (no backend yet; confirms the intent honestly)
+// Form submission feedback: online submissions aren't live yet, so tell
+// the visitor plainly rather than pretending the form was sent.
 document.querySelectorAll('form[data-form-name]').forEach((form) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = form.dataset.formName;
     const status = form.querySelector('.form-status');
     if (status) {
-      status.textContent = `Thanks. This form isn't wired up to a backend yet, so nothing was actually sent. When it is, this is where your ${name} submission confirmation will appear.`;
+      status.textContent = "Thanks for reaching out! Online submissions aren't open yet. Please contact us directly by phone or email in the meantime, and we'll get back to you.";
       status.setAttribute('role', 'status');
     }
   });

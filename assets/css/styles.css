@@ -144,12 +144,12 @@ button { font-family: inherit; }
 }
 .mobile-nav-backdrop.open { opacity: 1; visibility: visible; }
 .mobile-nav {
-  position: fixed; top: 0; right: 0; bottom: 0; width: min(360px, 82vw);
+  position: fixed; top: 0; left: 0; bottom: 0; width: min(360px, 82vw);
   background: var(--ink); color: #fff; z-index: 100;
   display: flex; flex-direction: column; padding: var(--space-6) var(--space-5);
   overflow-y: auto;
-  transform: translateX(100%); transition: transform 260ms ease;
-  box-shadow: -8px 0 30px rgba(0,0,0,0.25);
+  transform: translateX(-100%); transition: transform 260ms ease;
+  box-shadow: 8px 0 30px rgba(0,0,0,0.25);
 }
 .mobile-nav.open { transform: translateX(0); }
 .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6); }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kryhr.github.io/csa-xenia/sitemap.xml

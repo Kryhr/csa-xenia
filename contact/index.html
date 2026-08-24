@@ -67,6 +67,7 @@
       <li><a href="/csa-xenia/about/">Info</a></li>
       <li><a href="/csa-xenia/staff/">Staff</a></li>
       <li><a href="/csa-xenia/board/">Board of Trustees</a></li>
+      <li><a href="/csa-xenia/testimonials/">Testimonials</a></li>
     </ul>
   </div>
 
@@ -110,30 +111,38 @@
         <dt>Address</dt>
         <dd>135 East Church Street (the former YMCA building)<br>Xenia, OH 45385</dd>
         <dt>Phone</dt>
-        <dd><a href="tel:+19378002720">937-800-2720</a></dd>
+        <dd><a href="tel:+19378002720">(937) 800-CSA0 (2720)</a></dd>
         <dt>Email</dt>
         <dd><a href="mailto:info@communitysteam.com">info@communitysteam.com</a></dd>
       </dl>
       <p style="color:var(--gray-mid); font-size:0.88rem; margin-top:var(--space-5);">CSA's previous campus at 855 Lower Bellbrook Road served students through the 2025-26 school year. All students are now at the Church Street address above for 2026-27.</p>
       <a href="https://www.google.com/maps/search/?api=1&query=135+East+Church+Street+Xenia+OH+45385" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:var(--space-4);">Open in Google Maps</a>
     </div>
-    <form data-form-name="contact" novalidate>
+    <form class="form-grid" data-form-name="contact" novalidate>
       <div class="contact-card">
         <h2 style="font-size:1.3rem; margin-bottom:1rem;">Send a message</h2>
-        <div class="field" style="margin-bottom:var(--space-4);">
-          <label for="name" style="display:block; font-weight:600; margin-bottom:var(--space-2);">Name</label>
-          <input type="text" id="name" name="name" required style="width:100%; border:1px solid var(--border); border-radius:var(--radius-sm); padding:var(--space-3);">
+        <div class="form-field">
+          <label for="contact-first">First name (required)</label>
+          <input type="text" id="contact-first" name="first_name" required>
         </div>
-        <div class="field" style="margin-bottom:var(--space-4);">
-          <label for="email" style="display:block; font-weight:600; margin-bottom:var(--space-2);">Email</label>
-          <input type="email" id="email" name="email" required style="width:100%; border:1px solid var(--border); border-radius:var(--radius-sm); padding:var(--space-3);">
+        <div class="form-field">
+          <label for="contact-last">Last name (required)</label>
+          <input type="text" id="contact-last" name="last_name" required>
         </div>
-        <div class="field" style="margin-bottom:var(--space-4);">
-          <label for="message" style="display:block; font-weight:600; margin-bottom:var(--space-2);">Message</label>
-          <textarea id="message" name="message" rows="4" required style="width:100%; border:1px solid var(--border); border-radius:var(--radius-sm); padding:var(--space-3); font:inherit;"></textarea>
+        <div class="form-field">
+          <label for="contact-email">Email address (required)</label>
+          <input type="email" id="contact-email" name="email" required>
         </div>
-        <button type="submit" class="btn btn-teal">Send message</button>
-        <p class="form-status" style="margin-top:var(--space-4); color:var(--teal-dark); font-size:0.92rem;"></p>
+        <div class="form-field">
+          <label for="contact-subject">Subject (required)</label>
+          <input type="text" id="contact-subject" name="subject" required>
+        </div>
+        <div class="form-field">
+          <label for="contact-message">Message (required)</label>
+          <textarea id="contact-message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-teal" style="justify-self:start;">Send message</button>
+        <p class="form-status" role="status"></p>
       </div>
     </form>
   </div>
@@ -170,6 +179,7 @@
         <li><a href="/csa-xenia/news/">News</a></li>
         <li><a href="/csa-xenia/events/">Events</a></li>
         <li><a href="/csa-xenia/faq/">FAQ</a></li>
+        <li><a href="/csa-xenia/testimonials/">Testimonials</a></li>
       </ul>
     </div>
     <div>

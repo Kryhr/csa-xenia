@@ -275,6 +275,17 @@ button { font-family: inherit; }
 }
 .feature-card:hover { box-shadow: var(--shadow-2); transform: translateY(-3px); }
 .feature-card img { aspect-ratio: 16/9; object-fit: cover; }
+
+/* Staff/Board headshot cards: real photos vary wildly in their original
+   crop (tight square headshots next to a full-torso portrait), so a
+   16/9 landscape box was cropping straight through people's heads.
+   Force every headshot -- real photo or "photo coming soon" placeholder
+   alike -- into the same square box, biased toward the top so faces
+   stay in frame instead of getting center-cropped out. */
+.person-card img {
+  aspect-ratio: 1/1; object-fit: cover; object-position: top center;
+}
+.person-card .photo-placeholder { aspect-ratio: 1/1; }
 .feature-card-body { padding: var(--space-6); }
 .feature-card-body h3 { font-size: 1.3rem; margin-bottom: var(--space-3); }
 .feature-card-body p { color: var(--gray-mid); margin: 0 0 var(--space-4); }

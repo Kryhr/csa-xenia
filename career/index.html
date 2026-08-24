@@ -99,9 +99,6 @@
     <span class="hero-eyebrow">Careers</span>
     <h1>Join the CSA team.</h1>
     <p>CSA-Xenia is growing, and we're hiring for the 2026-27 school year. If you want to teach through real, project-based work instead of a script, we want to hear from you.</p>
-    <div class="hero-actions">
-      <a href="mailto:office@communitysteam.com?subject=Career%20Interest" class="btn btn-teal">Email us about an opening</a>
-    </div>
   </div>
 </section>
 
@@ -130,11 +127,48 @@
   </div>
 </section>
 
-<section class="cta-band reveal">
+<section class="section section-alt reveal">
   <div class="container">
-    <h2>Don't see your exact role?</h2>
-    <p>Reach out anyway. CSA is a small, growing school and is always glad to hear from people who want to be part of building it.</p>
-    <a href="../contact/" class="btn btn-outline" style="background:#fff;color:var(--teal-dark);border-color:#fff;">Contact CSA</a>
+    <div class="section-head">
+      <h2>Apply</h2>
+      <p style="max-width:65ch;">Fill out the form below and CSA will follow up directly. This mirrors the real application form on CSA's own careers page.</p>
+    </div>
+    <form class="form-grid" data-form-name="career application" novalidate>
+      <div class="form-field">
+        <label for="career-first">First name (required)</label>
+        <input type="text" id="career-first" name="first_name" required>
+      </div>
+      <div class="form-field">
+        <label for="career-last">Last name (required)</label>
+        <input type="text" id="career-last" name="last_name" required>
+      </div>
+      <div class="form-field">
+        <label for="career-email">Email (required)</label>
+        <input type="email" id="career-email" name="email" required>
+      </div>
+      <div class="form-field">
+        <label for="career-phone">Phone</label>
+        <input type="tel" id="career-phone" name="phone">
+      </div>
+      <div class="form-field">
+        <label for="career-position">Position interest (required)</label>
+        <input type="text" id="career-position" name="position" required>
+      </div>
+      <div class="form-field">
+        <label for="career-credentials">Credentials for desired position(s)</label>
+        <input type="text" id="career-credentials" name="credentials">
+      </div>
+      <div class="form-field">
+        <label for="career-heard">How did you hear about CSA-Xenia?</label>
+        <input type="text" id="career-heard" name="heard_about">
+      </div>
+      <div class="form-field">
+        <label for="career-message">Message (required)</label>
+        <textarea id="career-message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-teal" style="justify-self:start;">Submit</button>
+      <p class="form-status" role="status"></p>
+    </form>
   </div>
 </section>
 

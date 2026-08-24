@@ -208,13 +208,37 @@ if (calendarEl) {
   let viewYear = today.getFullYear();
   let viewMonth = today.getMonth();
 
+  const upcomingList = calendarEl.querySelector('#calendar-upcoming-list');
+
   fetch('/csa-xenia/assets/calendar-events.json')
     .then((res) => res.json())
     .then((data) => {
       events = data;
+      renderUpcoming();
       renderCalendar();
     })
     .catch(() => renderCalendar());
+
+  // Always shows what's actually coming up next, independent of whatever
+  // month is being browsed, and recalculated from the real date on every
+  // load -- so it stays current with no manual updating.
+  function renderUpcoming() {
+    if (!upcomingList) return;
+    const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const next = events
+      .filter((ev) => new Date(ev.date + 'T00:00:00') >= startOfToday)
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(0, 3);
+    if (!next.length) {
+      upcomingList.innerHTML = '<p class="calendar-empty-note">Nothing on the calendar right now. Check back soon.</p>';
+      return;
+    }
+    upcomingList.innerHTML = next.map((ev) => {
+      const d = new Date(ev.date + 'T00:00:00');
+      const label = `${monthNames[d.getMonth()].slice(0, 3)} ${d.getDate()}`;
+      return `<div class="calendar-upcoming-item"><span class="calendar-event-date">${label}</span><span>${ev.title}</span></div>`;
+    }).join('');
+  }
 
   function eventsFor(year, month) {
     return events.filter((ev) => {
@@ -255,13 +279,19 @@ if (calendarEl) {
         el.classList.add('has-event');
         el.setAttribute('tabindex', '0');
         el.setAttribute('role', 'button');
-        el.setAttribute('aria-label', `${monthNames[viewMonth]} ${day}: ${dayEvents.map((e) => e.title).join(', ')}`);
+        const summary = dayEvents.map((e) => e.title).join(', ');
+        el.setAttribute('aria-label', `${monthNames[viewMonth]} ${day}: ${summary}`);
+        el.setAttribute('title', summary);
         const dot = document.createElement('span');
         dot.className = 'calendar-dot';
         el.appendChild(dot);
         const jump = () => {
           const target = eventList?.querySelector(`[data-date="${iso}"]`);
-          target?.scrollIntoView({ block: 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' });
+          if (target) {
+            target.scrollIntoView({ block: 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' });
+            target.classList.add('flash');
+            setTimeout(() => target.classList.remove('flash'), 1200);
+          }
         };
         el.addEventListener('click', jump);
         el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(); } });

@@ -34,6 +34,11 @@
 }
 
 * { box-sizing: border-box; }
+/* Images are draggable by default; on the hero carousel a click-and-drag
+   (or a slightly-off click while it's auto-rotating) picks the photo up
+   as a native browser drag-ghost thumbnail, which looks like a small,
+   bordered image floating over the page. Turn that off everywhere. */
+img { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;

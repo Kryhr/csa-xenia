@@ -1,5 +1,10 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// Prevent the native browser image-drag ghost (a small bordered thumbnail
+// that trails the cursor if an <img> gets clicked-and-dragged), most
+// noticeable on the auto-rotating hero carousel.
+document.querySelectorAll('img').forEach((img) => { img.draggable = false; });
+
 // Sticky header compact-on-scroll
 const header = document.querySelector('.site-header');
 if (header) {

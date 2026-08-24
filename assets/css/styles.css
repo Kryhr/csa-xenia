@@ -81,21 +81,24 @@ button { font-family: inherit; }
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
-/* ---------- Header: hamburger-first nav (left), real logo at correct
-   aspect ratio (right). The real logo image already contains the full
-   wordmark + "XENIA" subtext, so it's used alone, not duplicated with
-   separately-typed text next to it. ---------- */
+/* ---------- Header: the school's actual name in real, crisp text (not
+   just baked into a raster logo image) sits clearly at the top-left, so
+   the site reads as "Community STE(A)M Academy" immediately rather than
+   depending on a small image being legible. A second bar underneath
+   surfaces the top real destinations as plain visible links -- the
+   hamburger still holds the full menu, but a visitor shouldn't have to
+   open anything to see where the main pages are. ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 60;
   background: rgba(255,255,255,0.96); backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
-  padding: var(--space-3) 0;
   transition: padding 160ms ease, box-shadow 160ms ease;
 }
-.site-header.is-scrolled { padding: var(--space-2) 0; box-shadow: var(--shadow-1); }
+.site-header.is-scrolled { box-shadow: var(--shadow-1); }
 .header-grid {
   display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  padding: var(--space-3) 0; transition: padding 160ms ease;
 }
+.site-header.is-scrolled .header-grid { padding: var(--space-2) 0; }
 .menu-toggle {
   display: inline-flex; align-items: center; gap: var(--space-2);
   background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer;
@@ -104,12 +107,27 @@ button { font-family: inherit; }
 }
 .menu-toggle:hover { background: var(--gray-light); border-color: var(--teal); }
 
-.logo { display: inline-flex; align-items: center; text-decoration: none; }
-.logo img { height: 42px; width: auto; transition: height 160ms ease; }
-.site-header.is-scrolled .logo img { height: 34px; }
-.logo-word { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.05rem; }
+.logo { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; min-width: 0; flex: 1 1 auto; }
+.logo-mark { flex-shrink: 0; height: 36px; width: 36px; transition: height 160ms ease, width 160ms ease; }
+.site-header.is-scrolled .logo-mark { height: 30px; width: 30px; }
+.logo-word { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--ink); line-height: 1.15; }
+.logo .logo-word {
+  font-size: 1.15rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0;
+}
 
-.header-actions { display: flex; gap: var(--space-3); align-items: center; }
+.top-nav { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08); }
+.top-nav-inner {
+  display: flex; gap: var(--space-6); overflow-x: auto; scrollbar-width: none;
+  padding: var(--space-3) var(--space-5);
+}
+.top-nav-inner::-webkit-scrollbar { display: none; }
+.top-nav-inner a {
+  color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; font-weight: 600;
+  white-space: nowrap; transition: color 140ms ease;
+}
+.top-nav-inner a:hover { color: #fff; }
+
+.header-actions { display: flex; gap: var(--space-3); align-items: center; flex-shrink: 0; }
 .search-toggle {
   background: none; border: none; cursor: pointer; padding: var(--space-2);
   color: var(--ink); display: inline-flex; border-radius: var(--radius-sm);
@@ -223,9 +241,10 @@ button { font-family: inherit; }
 .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
 .hero-slide-caption {
   position: absolute; left: 0; right: 0; bottom: 0; margin: 0;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.65));
-  color: #fff; padding: var(--space-6) var(--space-5) var(--space-4);
-  font-size: 0.95rem; font-weight: 500;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.7) 70%);
+  color: #fff; padding: var(--space-8) var(--space-6) var(--space-5);
+  font-family: "Space Grotesk", sans-serif; font-size: clamp(1.3rem, 2.6vw, 1.9rem); font-weight: 700;
+  max-width: 32ch;
 }
 .hero-carousel-controls {
   position: absolute; bottom: var(--space-4); right: var(--space-5); z-index: 5;
@@ -245,6 +264,30 @@ button { font-family: inherit; }
 @media (max-width: 700px) {
   .hero-carousel { height: min(78vh, 620px); min-height: 380px; }
   .hero-carousel-mark { width: 40px; height: 40px; top: var(--space-4); left: var(--space-4); }
+}
+
+/* ---------- Quick links: icon-led shortcuts right below the hero photo,
+   so the first thing after the photo is immediately useful rather than
+   more marketing copy -- real destinations, not filler. ---------- */
+.quick-links { background: #fff; border-bottom: 1px solid var(--border); }
+.quick-links-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-3);
+  padding: var(--space-5) 0;
+}
+.quick-links-grid a {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  text-decoration: none; color: var(--ink); text-align: center; font-size: 0.82rem; font-weight: 600;
+  padding: var(--space-2); border-radius: var(--radius-sm); transition: background-color 140ms ease, color 140ms ease;
+}
+.quick-links-grid a:hover { background: var(--gray-light); color: var(--teal-dark); }
+.quick-links-grid svg { color: var(--teal-dark); }
+
+@media (max-width: 900px) {
+  .quick-links-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .quick-links-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+  .quick-links-grid a { font-size: 0.72rem; }
 }
 
 /* ---------- Facts band ---------- */
@@ -476,7 +519,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .header-actions { gap: var(--space-1); }
   .header-actions > .btn-teal { display: none; }
   .menu-toggle span { display: none; }
-  .logo img { height: 32px; }
+  .logo-mark { height: 30px; width: 30px; }
+  .logo .logo-word { font-size: 0.95rem; }
   .calendar { padding: var(--space-4); }
   .calendar-day { font-size: 0.8rem; padding: var(--space-1); min-height: 68px; }
   .calendar-day-label { font-size: 0.62rem; }

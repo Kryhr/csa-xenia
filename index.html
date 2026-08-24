@@ -7,7 +7,7 @@
 <meta name="description" content="Community STE(A)M Academy is a tuition-free, independent public STEAM school in downtown Xenia, Ohio, now enrolling grades 4-9 for the 2026-27 school year.">
 <link rel="canonical" href="https://kryhr.github.io/csa-xenia/">
 <link rel="icon" type="image/webp" href="assets/images/site/favicon.webp">
-<link rel="stylesheet" href="assets/css/styles.css?v=7">
+<link rel="stylesheet" href="assets/css/styles.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -38,21 +38,31 @@
 
 <header class="site-header">
   <div class="container header-grid">
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-haspopup="true">
-      <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <span>Menu</span>
-    </button>
+    <a href="/csa-xenia/" class="logo">
+      <img class="logo-mark" src="assets/images/site/favicon.webp" alt="">
+      <span class="logo-word">Community STE(A)M Academy</span>
+    </a>
 
     <div class="header-actions">
       <button class="search-toggle" aria-label="Search the site">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       </button>
       <a href="/csa-xenia/admissions/" class="btn btn-teal">Enroll Now</a>
-      <a href="/csa-xenia/" class="logo">
-        <img src="assets/images/site/main-logo.webp" alt="Community STE(A)M Academy - Xenia">
-      </a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-haspopup="true">
+        <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <span>Menu</span>
+      </button>
     </div>
   </div>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="container top-nav-inner">
+      <a href="/csa-xenia/about/">About</a>
+      <a href="/csa-xenia/admissions/">Admissions</a>
+      <a href="/csa-xenia/news/">News</a>
+      <a href="/csa-xenia/events/">Events</a>
+      <a href="/csa-xenia/contact/">Contact</a>
+    </div>
+  </nav>
 </header>
 
 <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
@@ -124,19 +134,19 @@
   <div class="hero-carousel-track">
     <div class="hero-slide">
       <img src="assets/images/site/135-church-st-entrance.webp" alt="The 135 East Church Street building in downtown Xenia, the former YMCA and CSA's home for the 2026-27 school year" loading="eager">
-      <p class="hero-slide-caption">The 135 E. Church Street campus, the former YMCA building, downtown Xenia.</p>
+      <p class="hero-slide-caption">Our New Campus, Downtown Xenia</p>
     </div>
     <div class="hero-slide">
       <img src="assets/images/pages/details-art-students.webp" alt="Four CSA students holding their own pencil portrait drawings from a visual arts class" loading="lazy">
-      <p class="hero-slide-caption">Students show off original pencil drawings from a CSA visual arts class.</p>
+      <p class="hero-slide-caption">Original Student Artwork</p>
     </div>
     <div class="hero-slide">
       <img src="assets/images/pages/admissions-photo-3.webp" alt="A CSA student holding a snow cone from a shaved-ice truck at an outdoor school celebration" loading="lazy">
-      <p class="hero-slide-caption">Food trucks and shaved ice at CSA's last-day-of-school celebration.</p>
+      <p class="hero-slide-caption">Last Day of School Celebration</p>
     </div>
     <div class="hero-slide">
       <img src="assets/images/pages/partners-photo-2.webp" alt="A CSA student showing a handmade wooden radio kit to a community partner at the Dayton Hamvention" loading="lazy">
-      <p class="hero-slide-caption">A CSA student demonstrates a homemade radio kit at the Dayton Hamvention, one of the community partnerships that connect CSA students with real experts.</p>
+      <p class="hero-slide-caption">Dayton Hamvention Partnership</p>
     </div>
   </div>
   <div class="hero-carousel-controls">
@@ -146,6 +156,35 @@
     <div class="hero-carousel-dots"></div>
   </div>
 </section>
+
+<nav class="quick-links" aria-label="Quick links">
+  <div class="container quick-links-grid">
+    <a href="admissions/">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
+      <span>Apply Now</span>
+    </a>
+    <a href="events/">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <span>Calendar</span>
+    </a>
+    <a href="contact/">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v14H7l-3 3V4z"/></svg>
+      <span>Contact</span>
+    </a>
+    <a href="staff/">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+      <span>Staff Directory</span>
+    </a>
+    <a href="donate/">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+      <span>Donate</span>
+    </a>
+    <a href="board/">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg>
+      <span>Board of Trustees</span>
+    </a>
+  </div>
+</nav>
 
 <section class="hero-intro">
   <div class="container">
@@ -309,6 +348,6 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="assets/js/main.js?v=7"></script>
+<script src="assets/js/main.js?v=8"></script>
 </body>
 </html>

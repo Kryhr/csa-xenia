@@ -208,31 +208,36 @@ if (calendarEl) {
   let viewYear = today.getFullYear();
   let viewMonth = today.getMonth();
 
+  const upcomingPanel = calendarEl.querySelector('.calendar-upcoming');
   const upcomingList = calendarEl.querySelector('#calendar-upcoming-list');
+  const dayDetail = calendarEl.querySelector('#calendar-day-detail');
 
   fetch('/csa-xenia/assets/calendar-events.json')
     .then((res) => res.json())
     .then((data) => {
       events = data;
-      renderUpcoming();
       renderCalendar();
     })
     .catch(() => renderCalendar());
 
-  // Always shows what's actually coming up next, independent of whatever
-  // month is being browsed, and recalculated from the real date on every
-  // load -- so it stays current with no manual updating.
-  function renderUpcoming() {
-    if (!upcomingList) return;
+  // What's coming up next, independent of whatever month is being
+  // browsed, recalculated from the real date on every load. Hidden when
+  // it would just repeat the month already on screen (e.g. all 3 next
+  // events happen to fall in the month you're currently viewing).
+  function renderUpcoming(monthEvents) {
+    if (!upcomingPanel || !upcomingList) return;
     const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     const next = events
       .filter((ev) => new Date(ev.date + 'T00:00:00') >= startOfToday)
       .sort((a, b) => a.date.localeCompare(b.date))
       .slice(0, 3);
-    if (!next.length) {
-      upcomingList.innerHTML = '<p class="calendar-empty-note">Nothing on the calendar right now. Check back soon.</p>';
+    const monthDates = new Set(monthEvents.map((ev) => ev.date));
+    const redundant = next.length > 0 && next.every((ev) => monthDates.has(ev.date));
+    if (!next.length || redundant) {
+      upcomingPanel.style.display = 'none';
       return;
     }
+    upcomingPanel.style.display = '';
     upcomingList.innerHTML = next.map((ev) => {
       const d = new Date(ev.date + 'T00:00:00');
       const label = `${monthNames[d.getMonth()].slice(0, 3)} ${d.getDate()}`;
@@ -247,6 +252,8 @@ if (calendarEl) {
     }).sort((a, b) => a.date.localeCompare(b.date));
   }
 
+  const hint = calendarEl.querySelector('.calendar-hint');
+
   function renderCalendar() {
     if (!grid || !monthLabel) return;
     monthLabel.textContent = `${monthNames[viewMonth]} ${viewYear}`;
@@ -260,6 +267,9 @@ if (calendarEl) {
     const firstDay = new Date(viewYear, viewMonth, 1).getDay();
     const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
     const monthEvents = eventsFor(viewYear, viewMonth);
+    renderUpcoming(monthEvents);
+    if (dayDetail) dayDetail.hidden = true;
+    if (hint) hint.style.display = monthEvents.length ? '' : 'none';
     for (let i = 0; i < firstDay; i++) {
       const el = document.createElement('div');
       el.className = 'calendar-day empty';
@@ -285,16 +295,16 @@ if (calendarEl) {
         const dot = document.createElement('span');
         dot.className = 'calendar-dot';
         el.appendChild(dot);
-        const jump = () => {
-          const target = eventList?.querySelector(`[data-date="${iso}"]`);
-          if (target) {
-            target.scrollIntoView({ block: 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' });
-            target.classList.add('flash');
-            setTimeout(() => target.classList.remove('flash'), 1200);
-          }
+        const showDetail = () => {
+          grid.querySelectorAll('.calendar-day.is-selected').forEach((d) => d.classList.remove('is-selected'));
+          el.classList.add('is-selected');
+          if (!dayDetail) return;
+          const dateLabel = `${monthNames[viewMonth]} ${day}`;
+          dayDetail.innerHTML = dayEvents.map((ev) => `<p><strong>${dateLabel}:</strong> ${ev.title}</p>`).join('');
+          dayDetail.hidden = false;
         };
-        el.addEventListener('click', jump);
-        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(); } });
+        el.addEventListener('click', showDetail);
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showDetail(); } });
       }
       grid.appendChild(el);
     }

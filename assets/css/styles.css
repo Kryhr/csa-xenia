@@ -437,6 +437,14 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 .calendar-day.has-event { background: var(--gray-light); cursor: pointer; font-weight: 700; }
 .calendar-day.has-event:hover { background: var(--teal-tint, #e3f2f0); }
 .calendar-dot { width: 5px; height: 5px; border-radius: 999px; background: var(--teal); }
+.calendar-day.is-selected { outline: 2px solid var(--teal-dark); }
+.calendar-day-detail {
+  background: var(--teal-tint); border-radius: var(--radius-sm); padding: var(--space-4);
+  margin-top: var(--space-5);
+}
+.calendar-day-detail p { margin: 0; color: var(--ink); font-size: 0.92rem; }
+.calendar-day-detail p + p { margin-top: var(--space-2); }
+.calendar-hint { color: var(--gray-mid); font-size: 0.85rem; margin: var(--space-4) 0 0; }
 .calendar-event-list { margin-top: var(--space-6); }
 .calendar-event-item { display: flex; gap: var(--space-4); padding: var(--space-3) 0; border-top: 1px solid var(--border); border-radius: var(--radius-sm); transition: background-color 400ms ease; }
 .calendar-event-item:first-child { border-top: none; }

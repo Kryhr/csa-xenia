@@ -15,12 +15,14 @@ const mobileNavClose = document.querySelector('.mobile-nav-close');
 function openMobileNav() {
   if (!mobileNav) return;
   mobileNav.classList.add('open');
+  menuToggle?.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
   mobileNavClose?.focus();
 }
 function closeMobileNav() {
   if (!mobileNav) return;
   mobileNav.classList.remove('open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
   menuToggle?.focus();
 }
@@ -140,8 +142,8 @@ if (carousel) {
   start();
 }
 
-// Scroll-triggered reveal
-const revealEls = document.querySelectorAll('.reveal');
+// Scroll-triggered reveal (also covers the staggered facts-band count-in)
+const revealEls = document.querySelectorAll('.reveal, .facts-grid');
 if (revealEls.length && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

@@ -431,7 +431,7 @@ No standalone "Student-Parent Handbook" PDF was found separately from the Policy
 - `donate-pledge-now-banner.webp` and `dayton-foundation-component-fund-logo.webp`
 - `partners-photo-1.webp` through `partners-photo-4.webp`
 - `admissions-photo-1.webp` through `admissions-photo-6.webp` (a real photo gallery on the /interest admissions page)
-- `info-building-photo.webp` (a second real building photo, from /info)
+- `info-building-photo.webp` - **CAUTION: visually inspected and this is NOT the Church Street or Market Street building.** It shows a beige office/industrial-style building with a different organization's blue circular logo on it, likely the old 855 Lower Bellbrook Road site or an unrelated building. Do not caption this as CSA's "downtown Xenia" campus or use it without confirming what it actually is first. Removed from the homepage carousel for this reason.
 - `details-photo-1.webp`, `details-art-students.webp`, `details-photo-3.webp` (from /details)
 
 FAQ and Contact have no images. Staff Links wasn't accessed (password-protected).

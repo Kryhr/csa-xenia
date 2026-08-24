@@ -22,11 +22,22 @@
 - Direct PDF links found on the homepage/student-parent page: `/s/2026-2027_CalendarExplanations.pdf`, `/s/4-6-2026-2027-Supply-List-2.pdf`, `/s/7-8-2026-2027-Supply-List.pdf`, `/s/HS-2026-2027-Supply-List.pdf`
 - External Raptor background-check application: `apps.raptortech.com/Apply/ODUzOTplbi1VUw==`
 
-## Address discrepancy found - needs resolving before publishing, not guessing
+## Anticipated maximum enrollment (from /anticipated-maximum-enrollment) - explains the "neighborhood" staff titles
 
-- `/locations` lists two addresses: **135 East Church Street** (main office & 2026-27 school building, former YMCA) and **578 East Market Street** (future building, former East High School).
-- `/contact` lists a *third*, different pairing: **135 East Church Street** (Main Office) and **855 Lower Bellbrook Road, former NBA building** (labeled "Our Learning Facility").
-- These don't agree with each other on the current site itself. Don't pick one to feature without asking which is actually correct/current; this looks like the live site has its own stale-page problem (same pattern as the Sept. 1 vs. Sept. 14 date inconsistency), not something to silently resolve by guessing.
+CSA-Xenia organizes grade bands into named "neighborhoods" (this is why staff titles like "Life Skills Neighborhood" exist, e.g. Siobhan Peterson-Walsh and April Haddix):
+
+| Neighborhood | Grade band | Anticipated students/grade | Anticipated student/teacher ratio |
+|---|---|---|---|
+| Foundations | Kindergarten | 60 | 15 to 1 |
+| Literacy | 1st-3rd | 72 | 18 to 1 |
+| Life Skills | 4th-5th | 80 | 20 to 1 |
+| Perspectives | 6th-8th | 100 | 23 to 1 |
+| Exploration | 9th | 120 | 25 to 1 |
+| Enterprise | 10th-12th | 120 | 25 to 1 |
+
+## Address discrepancy - RESOLVED via the news archive, not a guess
+
+`/locations` lists 135 East Church Street (2026-27 building, former YMCA) and 578 East Market Street (future building, former East High School). `/contact` instead pairs 135 Church St. with 855 Lower Bellbrook Road ("Our Learning Facility"), which looked like a real conflict. The Nov. 7, 2025 news article ("Veterans Day Ceremony") confirms **855 Lower Bellbrook Road was the real, active campus through the 2025-26 school year** - it's the previous location, not a currently-active third site. `/contact` is simply a stale page that never got updated after the move; the correct current picture is `/locations`' two addresses (current building + future building). Don't rebuild anything featuring 855 Lower Bellbrook as a current address.
 
 ## Career (from /career)
 
@@ -130,7 +141,91 @@ This is the full history, not a sample. Author names are real and vary (not alwa
 - 8/18/26 - A Familiar Face Joins the CSA Team - Kim Haines
 - 8/21/26 - New First Day of School & Orientation Date - Kim Haines (full text captured below)
 
-That's 42 real posts spanning January 2022 through August 2026, the school's entire public news history. Only the Sept. 14 date-change article and the Lunar Recovery Mission project have had their full body text captured so far; the rest are headline/author/date only.
+That's 42 real posts spanning January 2022 through August 2026, the school's entire public news history. Every article's real URL has been captured and every one has now been read in full (or near-full for the longest ones). Faithful summaries of each, in chronological order, follow. A few of these articles have real reader comments enabled (confirmed on the Hawkins fellowship post, including a comment from a named outside community member, Frank Hall, Dean of the John W. Garland College of Engineering, Science, Technology and Agriculture at Central State University) - a comments feature is a real part of the current site's news pages, not an assumption.
+
+**What is STEAM learning? (1/17/22, Jason Hubbard)** - Opens from an 1828 Webster's dictionary definition of "learning" to argue traditional row-and-column classrooms can't fully realize it. Defines STEAM as a blended environment (not subjects taught in isolation) where reading/writing/speaking are still infused throughout, aimed at students who ask "when will I ever use this." References a vintage classroom photo.
+
+**Ready...Set...Fail! (1/24/22, Dr. Bob Chasnov)** - Opens with the real Apollo 13 "square peg in round hole" CO2-filter fix (linked to a real Gizmodo article) as an example of solving problems fast. Describes a real "Impromptu Design Competition" exercise CSA students do: build a gravity-powered car from 4 marshmallows, 2 straws, 5 stir sticks, 2 paper clips, 10 rubber bands, 2 index cards, 1m tape, 1 sheet of paper, released from a "hill" to travel the farthest.
+
+**Being a Champion for the Sense of Wonder (2/1/22, Dr. Jeremy Ervin)** - Frames teaching as constant decision-making to "teach students, not content." Quotes Rachel Carson's "Sense of Wonder" twice and references Rita Pierson's TED Talk on relationships in teaching.
+
+**Words Describing School (2/10/22, Jason Hubbard)** - A Wordle-style "5-letter word" framing device proposing words for what school could be: APPLY (real-world application, e.g. a math lesson in the cafeteria with kitchen staff) and DREAM (passion projects, curiosity over crushing aspiration) are the two captured in full; more words likely follow past the capture point.
+
+**"Ahh, Science...Music to my ears!" (2/18/22, Dr. Kezia Curry)** - Uses sing-along lyric prompts (Twinkle Twinkle, Ain't No Mountain High Enough, You Are My Sunshine, Let It Go) to argue music is simultaneously science (sound waves), math (pitch/tempo/rhythm), and medicine (cites Cleveland Clinic music therapy).
+
+**Custom Has No Limits (5/2/22, Jason Hubbard)** - Opens with the real Henry Ford "any color so long as it's black" quote, contrasts with modern car customization (down to 3D-printed Ford Maverick parts), and draws the parallel to classroom design shifting away from static rows toward flexible seating, movable walls, and writable surfaces.
+
+**Cooperative Learning...Worth All the Fuss? (10/31/22, Jason Hubbard)** - Honest look at real group-work pitfalls (one student doing all the work, off-task behavior, personality conflicts, chronic absence, unfair grading). Cites Robyn M. Gillies' research (2016) and Jennifer Gonzalez/Cult of Pedagogy's five components of effective cooperative work: positive interdependence, individual accountability, promotive interaction, and more (capture cut off before the full five were listed).
+
+**Leveraging Project Based Learning with Shark Tank (2/14/23, Dr. Lorri Ague)** - Cites Nilson (2016) on PBL skill development, quotes Benjamin Franklin ("Involve me and I learn"), and describes a Minnesota-based educator's "Shark Tank" PBL classroom exercise where students pitch a financially viable innovative idea.
+
+**Transforming Education: Uncovering the Innovative Philosophy of CSA-Xenia (2/21/23, Dr. Jeremy Ervin)** - Lists CSA's core values as: Personalized Education, Community Service, Holistic Thinking, Effective Communication, Creative Expression, Confident Identity. **Note: this list doesn't match the Donate page's six core values (which swap in "Dynamic Movement" for "Personalized Education") - a real inconsistency across the site's own materials, not something to silently resolve by picking one.** Describes real "Pay-it-Forward" community-service units and internships.
+
+**Making a Life-Long Impact (3/29/23, Dr. Lorri Ague)** - Describes "Life-long IMPACT" as an instructional philosophy (connect, collaborate, innovate, influence, inspire) and gives a real example: 7th graders studying body systems in science while reading Dr. Jekyll and Mr. Hyde in ELA, cross-referencing the two.
+
+**Why CSA-Xenia Needs Your Support: A Message from Our Team (4/1/23, Dr. Jeremy Ervin)** - Explains that Ohio's per-pupil instructional funding only covers costs tied to seated students, leaving startup costs (facilities, marketing, tech infrastructure) uncovered before state funding arrives. Specifically calls out donations for Makerspace equipment and the "dynamic movement program."
+
+**Why Consider Community STE(A)M Academy - Xenia? (4/26/23, Dr. Lorri Ague)** - Real history/context: the first charter-school-enabling law was passed in 1991; more than 7,800 charter schools now serve 3.7M+ US students. Frames charter schools around three principles: choice, innovation, freedom, then positions CSA-Xenia as "an independent STEM/STEAM Designated public school (similar to a charter school)."
+
+**BOLDLY Creating STEM/STEAM Learning Alternative (6/12/23, Dr. Lorri Ague)** - A repetitive, deliberately emphatic piece built around the refrain "BOLDLY Creating STEM/STEAM Learning Alternative," covering project-based collaboration, individualized attention, hands-on mentorship, real experiential opportunities (job shadowing, community service, apprenticeships), and technology integration.
+
+**A PURPOSEFUL Career (8/2/23, Dr. Lorri Ague)** - A teacher-recruiting post for Fall 2023 built around the word PURPOSE, listing CSA as COLLABORATIVE, promoting FLEXIBILITY, advancing INNOVATION, and encouraging PARTNERSHIPS with community experts and families.
+
+**Insight into CSA's Unique Approach to Student Learning and Success (5/4/25, Dr. Jeremy Ervin)** - Real, specific fact: CSA-Xenia is Ohio's only STEAM-Designated Independent public school and one of just eight independently-designated STEM/STEAM schools in the state, naming two named peer schools: Dayton Regional STEM School and Global Impact STEM Academy. Describes the "Define" phase of a six-phase Design Thinking model as where State of Ohio standards-based instruction is explicitly delivered (capture cut off mid-explanation).
+
+**Veterans Day Ceremony - Tuesday, Nov. 11 (11/7/25, Kim Haines)** - Invites veterans to a Flag Retirement Ceremony, 8:15am, **at the school's previous address, 855 Lower Bellbrook Road, Xenia** - this is the article that resolves the /locations vs. /contact address discrepancy: 855 Lower Bellbrook was the real, active campus through the 2025-26 school year, before the 2026-27 move to 135 E. Church St. Invites veteran photos and student thank-you notes for a display, contact info@communitysteam.com or hand to "Ms. Haines" directly.
+
+**CSA Honored Veterans with a Flag Retirement Ceremony (11/17/25, Kim Haines)** - Recap of the above ceremony, led by CSA students who are Girl/Boy Scouts, followed by a breakfast reception with veteran family members.
+
+**Tailored Learning: What Does It Truly Mean? (12/4/25, Christy Brock)** - Uses a tailored-suit metaphor (quotes designer Michael Kors) to explain individualized learning at CSA: seating choice (floor, wobbly stool, standing desk), alternative demonstration of understanding (e.g. writing a rap about cell structure), or schedule flexibility (a 6th grader attending high school math).
+
+**Building Tomorrow's Problem-Solvers with Lowes-Xenia (12/4/25, Kim Haines)** - Real flagship project: "Using Rovers to Understand AI-Driven Electric Vehicles," using Texas Instruments robotic rovers on whiteboard "roadways" marked with painter's tape for lane-keeping/object-detection/autonomous-navigation exercises. Lowes-Xenia donated the whiteboard panels, tape, and storage materials. Describes CSA as "Greene County's only independent, tuition-free STEAM school" and "a newly designated Ohio STE(A)M School."
+
+**Give the Gift of School Spirit (12/8/25, Kim Haines)** - Announces the Spirit Wear store's first holiday season (the same MOQ1 store found on the current live site).
+
+**Mr. Hawkins Awarded Prestigious Fellowship (1/7/26, Kim Haines)** - Scott Hawkins selected for a competitive 3-year fellowship (one of only 30 educators nationally) with the Institute of American Constitutional Thought and Leadership's Fundamental Principles Initiative, tied to the national America250 semiquincentennial commemoration. Has real reader comments, including one from Frank Hall, Dean of Central State University's John W. Garland College of Engineering, Science, Technology and Agriculture.
+
+**Student-Led Conferences: Helping Your Child Build Confidence, Ownership, and Voice (2/19/26, Jeremy Ervin)** - Explains CSA's second round of student-led parent-teacher conferences: students (not parents or teachers) lead, presenting a self-curated portfolio and reflecting on growth. Cites alignment with Ohio's STEM Quality Model. Includes real schedule links for grades 4-6, 7-8, and 9-11.
+
+**Learning that Starts with Real-World Application (2/19/26, Kim Haines)** - Describes the "Sustainable Plant Pigment" project: students extracted natural plant pigments to make watercolor paint and cosmetics as a petroleum-based-colorant alternative, in a student-made documentation video. The project was showcased at TechFest at Sinclair Community College among 90+ hands-on family activities.
+
+**Students Can Learn to Laugh, Create and Take the Stage (3/10/26, Kim Haines)** - "Laughter Lab Student Workshop" (March 26) taught by professional comedian John Branyan, culminating in "Laughter Lab LIVE," a ticketed evening stand-up show. Registration required via Final Forms by March 18; additional $25 tickets via the Greene Giving webpage.
+
+**Our First CSA Pep Rally Was a Blast! (3/13/26, Kim Haines)** - Kickoff event for the Bunny Bolt Fun Run (March 27), including a staff-vs-student tug of war. Registration link: getmovinfundhub.com.
+
+**Students Participate in Cybersecurity Contest (4/7/26, Kim Haines)** - CSA students joined the second annual Dayton Cyber Games at Reynolds and Reynolds headquarters, alongside 35+ other Dayton-area students.
+
+**CSA Student Council Raises Funds with "Pie in the Eye" Contest (4/20/26, Kim Haines)** - Raised a real $109 total ($5/entry); Ms. Haddix (5th grade teacher) was the pied winner; 5th grade students were both the top fundraiser and the randomly-drawn pie-thrower.
+
+**From Land to Legacy (4/23/26, Kim Haines)** - A multi-year outdoor-classroom project turning the campus's back acreage into a living classroom; high schoolers are mapping the property/ecosystem; 9th graders made a real entry video for the Shane McConkey EcoChallenge. Next year's school theme shifts from "Sustainability" to "Regeneration: From Land to Legacy." Real ask: parents donate coffee grounds (tick mitigation) and perennial wildflower seed packets for the freshman Forest Health Monitoring group.
+
+**Celebrating the Minds Behind the Makers (5/5/26, Kim Haines)** - Short Teacher and Staff Appreciation Week 2026 thank-you post.
+
+**Students Compete in State Cooking Competition (5/8/26, Kim Haines)** - The "Awesome Sauce" team (real named students: **Logan, Kaleigha, Jose, Jaslen, and Abhinav**) competed live at Columbus State Community College in the Ohio Grown: Student Chef Showcase, having been chosen from 200+ entries as a top-5 finalist.
+
+**STATE CHAMPIONS! (5/11/26, Kim Haines)** - Short announcement that the culinary team won the state title with their "Sunset Fiesta Bowl" recipe.
+
+**Community STE[A]M Academy Brings Home State Title Championship (5/21/26, Kim Haines)** - The full recap: the competition (Ohio Grown: Student Chef Showcase) challenged schools to create an original recipe from fresh produce/protein for actual school meal programs; the project started in the high school integrated life science class. Quotes teacher **Molly McAfee-Bandag** (full name for the staff directory's "Molly Bandag") on the food-chemistry/microbiology/nutrition angle. Full real team roster: **Jaslen Baldwin, Abhinav Bali, Kaleigha Granger, Logan King, and Jose Rodriguez** ("Team Awesome Sauce"). Quotes team member Kaleigha Granger on the experience. The winning "Sunset Fiesta Bowl" recipe will appear on Ohio school menus in the first month of the 2026-27 school year.
+
+**A New Chapter in the Heart of Xenia for CSA (6/10/26, Kim Haines)** - The official move announcement to 135 E. Church St. Quotes founder Dr. Jeremy Ervin on the original vision (an intersection of education, commerce, workforce development, and community engagement) and explicitly names the core values again as "confident identity, effective communication, community service, dynamic movement, and creative expression" (note: this phrasing includes Dynamic Movement, again conflicting with the Feb. 2023 article's "Personalized Education" version - the inconsistency is real and appears more than once). States CSA is "Ohio's first independent public STEAM-designated, tuition-free public school of choice," grades 4-12 with a planned K-3 addition. **States the planned opening date as Sept. 1** - this article predates the later construction-delay announcement that pushed it to Sept. 14, so it's real but superseded; don't use Sept. 1 from this article without the later correction.
+
+**CSA Teachers Attend Ohio STEM Innovation Summit (6/12/26, Kim Haines)** - Staff attended the 5th annual Ohio STEM Innovation Summit in Columbus (Ohio STEM Learning Network). April Haddix presented the "World Wide Arcade" project (grades 4-6) in the Hall of Inspiration; Susan Reeve and **Lorraine Kendall** (a middle school teacher not in the current /staff directory - worth confirming whether she's still on staff) co-presented a design-thinking Learning Lab session.
+
+**Last Day of School Celebrated (6/16/26, Kim Haines)** - Short recap of the 2025-26 last day: food trucks, families, a STEAM project showcase.
+
+**Families Invited to Learn More at Enrollment Information Meeting (7/14/26, Kim Haines)** - The real July 16 info meeting at Greene County Public Library - Xenia Branch, held off-site "while Community STEAM Academy prepares its new home at 135 E. Church St."
+
+**Creating Calm, Building Strength: More Than a Room-A Way Back (7/24/26, Kim Haines)** - CSA's sensory room received a real $300 grant from the Danni Rose Foundation (a real youth-mental-health nonprofit named for Danni Rose) for fidgets/sensory materials. Describes a specific real anecdote: a student used the room to self-regulate within an hour of the new materials arriving, rather than being removed from learning.
+
+**Welcome Our New Intervention Specialist (8/4/26, Kim Haines)** - Introduces **Amy Collins**: born/raised in Xenia, Xenia High School graduate, 20+ years in education (general ed and special ed), enjoys horses/swimming/hiking/reading, married with two children.
+
+**New ELA Teacher/Coach Introduced (8/10/26, Kim Haines)** - Introduces **Robin Reasoner** ("Ms. Reasoner"): favorite getaway is by the river with a book; weekend fun is her son's games, hiking, birdwatching; favorite drink is a fruit smoothie; aspiring hobby is scrapbooking.
+
+**Welcome Our Math Student Teacher (8/12/26, Kim Haines)** - Introduces **Jake Pinedo**, a Wilmington College senior (middle education, math/science focus), plays trombone in the college band and competes on the E-Sports team, worked as a YMCA Countryside camp counselor, favorite food is Skyline chili coney, has a mini-bernedoodle named Mr. Cheese.
+
+**A Familiar Face Joins the CSA Team (8/18/26, Kim Haines)** - Introduces **Shelly Tidwell**, known as "Grandma Hub"/"Hub Grandma," a returning volunteer now officially joining staff. Bachelor's in social science with an education concentration; homeschooled her own children and taught art in a homeschool co-op; enjoys crafts and her black lab.
+
+**New First Day of School & Orientation Date (8/21/26, Kim Haines)** - Reproduced verbatim above.
 
 # CSA-Xenia content inventory
 
@@ -177,7 +272,7 @@ Everything real, pulled directly from communitysteam.com on 2026-08-24. This is 
 
 **Curriculum bullet points (from /info):** all subjects taught; 21st-century skills; linking to community; "Learn HOW to think, not WHAT to think"; Workforce Direct; college & career readiness; innovative curriculum.
 
-See the complete 42-post news archive further below (all three pagination pages pulled). Only two articles' full body text has been captured so far: the date-change announcement (below) and the Lunar Recovery Mission project. Everything else in the archive is headline/author/date only until pulled or provided in full.
+See the complete 42-post news archive further below (all three pagination pages pulled, every article's real URL and full content now captured). Two are reproduced verbatim (the date-change announcement and, partially, the Lunar Recovery Mission project); the rest are captured below as detailed, faithful summaries that preserve every real name, quote, and fact rather than paraphrasing them away.
 
 ### Full text: "New First Day of School & Orientation Date" (Aug 21, 2026, Kim Haines)
 
@@ -314,6 +409,33 @@ All pulled directly from communitysteam.com's Squarespace CDN. Files are WebP da
 
 **assets/images/events/** - real event flyers/photos: `informational-meeting.webp` (July 16 library meeting), `what-love-can-do-flyer.webp` (student theater production), `whats-next-2026-27.webp` (April 30 family info meeting).
 
+**assets/documents/** - 14 real PDFs downloaded and verified, sourced directly from communitysteam.com:
+- `2026-2027-calendar-and-explanations.pdf`
+- `supply-list-4th-6th.pdf`, `supply-list-7th-8th.pdf`, `supply-list-high-school.pdf`
+- `csa-xenia-policy-manual.pdf` (the full governing-authority policy manual, referenced repeatedly across the FAQ, board page, and student-parent page)
+- `national-school-lunch-program-statement.pdf`
+- `dpia-student-wellness-success-plan-fy26.pdf` (the Disadvantaged Pupil Impact Aid / Student Wellness plan referenced in the FAQ)
+- `ways-to-give.pdf` (from the Donate page)
+- `after-school-club-team-information.pdf`
+- `policy-4430-internet-technology-acceptable-use.pdf`
+- `policy-4440-mobile-devices-and-cameras.pdf`
+- `district-state-test-security-procedures.pdf`
+- `parent-information-faq.pdf` (a printed/PDF version of the FAQ, parallel to the web page)
+- `nslp-application-with-fee-waiver.pdf`
+
+No standalone "Student-Parent Handbook" PDF was found separately from the Policy Manual; the FAQ's "Section 4 - Student-Parent Handbook" references may point to a section within the Policy Manual rather than a separate document. Worth confirming rather than assuming.
+
+**assets/images/pages/** - real photos swept from every other page visited in the second pass:
+- `career-susan.webp` (photo on the Career page)
+- `military-family-resources-photo.webp` and `purple-star-ohio-badge.webp` (the real Ohio Purple Star School badge)
+- `donate-pledge-now-banner.webp` and `dayton-foundation-component-fund-logo.webp`
+- `partners-photo-1.webp` through `partners-photo-4.webp`
+- `admissions-photo-1.webp` through `admissions-photo-6.webp` (a real photo gallery on the /interest admissions page)
+- `info-building-photo.webp` (a second real building photo, from /info)
+- `details-photo-1.webp`, `details-art-students.webp`, `details-photo-3.webp` (from /details)
+
+FAQ and Contact have no images. Staff Links wasn't accessed (password-protected).
+
 **Not yet downloaded, real and available if wanted:** a long history of past event flyers going back to 2023 (Bunny Bolt fun run, Laughter Lab LIVE, dog training classes, Murder on the Dance Floor student showcase, Buffalo Wild Wings fundraiser, garden workshop, spring/winter hikes, self-defense workshop, family paint night, cookie decorating classes, Canva workshop, winter concert, living museum showcase, Christmas cookie exchange, prospective-student open houses, Very Merry Open House, Community Open House). These show real, ongoing school-community life and are worth pulling in if the events archive gets built out.
 
 ## Volunteering (Community Experts)
@@ -322,15 +444,14 @@ Repeated across /info, /about, /student-parent: volunteers ("Community Experts")
 
 ## What still needs real input before building the rest of the site
 
-- Full article bodies for every news post besides the Sept. 14 date-change one (headlines/dates are all captured above; most bodies are not)
-- The full "Lunar Recovery Mission" article past the ~4000-character mark captured so far
+All 42 news articles are now read and summarized faithfully; the address discrepancy is resolved; images have been swept from every page visited. What's left:
+
 - Photos for the 5 staff and 1 board member the live site itself has no photo for (April Haddix, Robin Reasoner, Scott Hawkins, Michael Bott, Devin Hatfield, Dr. Kurtz Miller) - these don't exist yet even on the current site, not something we're missing on our end
-- More real photos of classrooms, students at work, and daily school life beyond what's already saved (nothing here should ever use stock or AI-generated images of "students" standing in for this real school)
-- The 4 real PDFs are now directly linked (calendar + 3 supply lists), but haven't been downloaded and saved locally yet the way the images were
-- Full body text for 40 of the 42 real news articles (only the Sept. 14 date-change post and a partial Lunar Recovery Mission pull are done)
-- The rest of the Lunar Recovery Mission article past the ~4000-character mark
-- **The address discrepancy between /locations and /contact needs a real answer from someone at the school, not a guess** - this can't be silently resolved
-- The Student-Parent Handbook (Section 4) and the Policy Manual of the Governing Authority, both referenced repeatedly (uniforms, phone policy, board meeting access) but not yet downloaded
-- The "Ways to Give" PDF referenced on the Donate page
-- The Disadvantaged Pupil Impact Aid / Student Wellness and Success Funds Plan report referenced in the FAQ
-- Whatever's actually on the "What is STEAM Learning?" blog post and its linked "Update Dayton with Danielle" interview with Jeremy Ervin, referenced from the FAQ as the real answer to "what does a typical day look like"
+- The rest of the "Lunar Recovery Mission" article past the ~4000-character mark captured so far (the "Moving Forward" section and beyond)
+- The rest of "Words Describing School" past the two words (APPLY, DREAM) captured, and the rest of "Cooperative Learning...Worth All the Fuss?" past the third of five components listed
+- The "Update Dayton with Danielle" interview with Jeremy Ervin that the FAQ says is linked at the end of "What is STEAM Learning?" - no such link or embed was found on that article when checked; worth confirming whether it's further down the page than what was captured, or whether the FAQ's reference is itself stale
+- Whether "Section 4 - Student-Parent Handbook" (referenced in the FAQ for uniforms/phone policy) is a section inside the downloaded Policy Manual PDF or a separate document that hasn't surfaced
+- **Two real, unresolved inconsistencies in the school's own materials, not ours to silently fix by picking one:** (1) the core values list appears as "Personalized Education, Community Service, Holistic Thinking, Effective Communication, Creative Expression, Confident Identity" in one 2023 article and as "confident identity, effective communication, community service, dynamic movement, and creative expression" in a 2026 article and on the Donate page; (2) the FAQ's supply list answer says "TBD" while three real supply-list PDFs are already linked elsewhere on the site
+- Whether **Lorraine Kendall**, named as a middle school teacher in a June 2026 article, should be added to the staff directory - she doesn't appear on the current live /staff page
+- A long history of past event flyers going back to 2023 (Bunny Bolt fun run, Laughter Lab LIVE, dog training classes, Murder on the Dance Floor, Buffalo Wild Wings fundraiser, garden workshop, hikes, self-defense workshop, family paint night, cookie decorating classes, Canva workshop, winter concert, living museum showcase, Christmas cookie exchange, prospective-student open houses, Very Merry Open House, Community Open House) - real, not yet downloaded, worth pulling in if the events archive gets built out
+- More real photos of classrooms and daily school life beyond what's already saved (nothing here should ever use stock or AI-generated images of "students" standing in for this real school)

@@ -176,17 +176,20 @@ button { font-family: inherit; }
 .mobile-nav li + li { margin-top: var(--space-3); }
 .mobile-nav a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600; font-family: Poppins, sans-serif; }
 
-/* ---------- Hero band 1: centered name/tagline, no photo behind text ---------- */
+/* ---------- Hero band 1: centered name/tagline, no photo behind text ----------
+   Kept deliberately compact so, combined with the photo band below, the whole
+   hero reads as one complete first impression instead of a tall text block
+   that pushes the photo mostly off-screen until you scroll. */
 .hero-intro {
-  background: var(--gray-light); padding: var(--space-8) 0 var(--space-7); text-align: center;
+  background: var(--gray-light); padding: var(--space-6) 0 var(--space-5); text-align: center;
 }
 .hero-eyebrow {
   display: inline-block; background: var(--teal-tint); color: var(--teal-dark); font-weight: 700;
   font-size: 0.8rem; letter-spacing: 0.05em; padding: var(--space-2) var(--space-4);
-  border-radius: 999px; margin-bottom: var(--space-5); text-transform: uppercase;
+  border-radius: 999px; margin-bottom: var(--space-4); text-transform: uppercase;
 }
-.hero-intro h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); max-width: 20ch; margin: 0 auto; }
-.hero-intro p { color: var(--gray-mid); max-width: 52ch; margin: var(--space-4) auto var(--space-6); font-size: 1.08rem; }
+.hero-intro h1 { font-size: clamp(2.1rem, 4.2vw, 3rem); max-width: 22ch; margin: 0 auto; }
+.hero-intro p { color: var(--gray-mid); max-width: 52ch; margin: var(--space-3) auto var(--space-5); font-size: 1.05rem; }
 .hero-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
 
 /* ---------- Interior page hero band (About, Admissions, News, etc.) ---------- */
@@ -197,10 +200,14 @@ button { font-family: inherit; }
 .page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); max-width: 32ch; }
 .page-hero p { color: var(--gray-mid); max-width: 60ch; margin: var(--space-3) 0 0; font-size: 1.05rem; }
 
-/* ---------- Hero band 2: photo carousel, its own full-width band ---------- */
+/* ---------- Hero band 2: photo carousel, its own full-width band ----------
+   Height is tied to the viewport (not a fixed wide aspect-ratio) so it
+   scales with the screen instead of towering past it on wide desktops --
+   paired with the trimmed .hero-intro above, the two bands together fit
+   within roughly one screen instead of needing a scroll to see the photo. */
 .hero-carousel {
   position: relative; overflow: hidden; background: var(--ink);
-  aspect-ratio: 16/7;
+  height: clamp(320px, 58vh, 620px);
 }
 .hero-carousel-track { position: relative; width: 100%; height: 100%; }
 .hero-slide {
@@ -231,7 +238,7 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 700px) {
-  .hero-carousel { aspect-ratio: 4/5; }
+  .hero-carousel { height: clamp(360px, 62vh, 520px); }
 }
 
 /* ---------- Facts band ---------- */

@@ -161,7 +161,19 @@ if (revealEls.length && 'IntersectionObserver' in window) {
       }
     });
   }, { threshold: 0.15 });
-  revealEls.forEach((el) => observer.observe(el));
+  // Some browsers delay an IntersectionObserver's first callback until
+  // after a scroll/reflow event, even for a target that's already
+  // visible when observe() is called -- which read as "the page loads
+  // with blank sections that only appear once you scroll." Don't rely on
+  // that callback for what's already on screen at load: check directly.
+  revealEls.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('in-view');
+    } else {
+      observer.observe(el);
+    }
+  });
 } else {
   revealEls.forEach((el) => el.classList.add('in-view'));
 }

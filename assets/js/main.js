@@ -49,7 +49,7 @@ let searchIndex = null;
 async function loadSearchIndex() {
   if (searchIndex) return searchIndex;
   try {
-    const res = await fetch('/csa-xenia/assets/search-index.json');
+    const res = await fetch('/csa-xenia/assets/search-index.json', { cache: 'no-store' });
     searchIndex = await res.json();
   } catch (err) {
     searchIndex = [];
@@ -211,7 +211,7 @@ if (calendarEl) {
   const upcomingPanel = calendarEl.querySelector('.calendar-upcoming');
   const upcomingList = calendarEl.querySelector('#calendar-upcoming-list');
 
-  fetch('/csa-xenia/assets/calendar-events.json')
+  fetch('/csa-xenia/assets/calendar-events.json', { cache: 'no-store' })
     .then((res) => res.json())
     .then((data) => {
       events = data;

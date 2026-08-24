@@ -80,3 +80,13 @@ Career, Military Family Resources, Donate, Partners, FAQ, Store, Details, Testim
 - The two real inconsistencies in the school's own materials (core values list, supply-list "TBD" vs. real linked PDFs) - flag on the actual page or just go with the most current version? Your call once we get there.
 - Whether to add Lorraine Kendall to the staff directory (named in a 2026 article, not on the current live staff page).
 - The hero decision above.
+- The "Start your application" button and the contact form both submit to nothing yet (JS shows an honest "not connected to a backend yet" message instead of pretending to send). They need a real form service (e.g. Formspree) or a real backend endpoint before launch.
+
+## Done since the first 10 pages
+
+- Clean, extensionless URLs (`/about/` instead of `/about.html`) via a folder-per-page structure on GitHub Pages.
+- Mobile nav converted from a full-screen takeover to a side drawer with a dimmed backdrop.
+- Fixed the missing `.page-hero` and `.contact-card` CSS that caused the "bubble under the menu" and "weird font" bugs.
+- Real, working events calendar (month grid, not a PDF) driven by `assets/calendar-events.json`.
+- Expanded The STE[A]M Difference page with real content on the neighborhood system and CCP/CTE pathways, not just the one family quote.
+- Polished 404 page matching the rest of the site.

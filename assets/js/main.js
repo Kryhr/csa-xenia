@@ -8,13 +8,15 @@ if (header) {
   document.addEventListener('scroll', onScroll, { passive: true });
 }
 
-// Mobile nav
+// Mobile/full nav: a side drawer with a dimmed backdrop, not full-screen
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavBackdrop = document.querySelector('.mobile-nav-backdrop');
 const mobileNavClose = document.querySelector('.mobile-nav-close');
 function openMobileNav() {
   if (!mobileNav) return;
   mobileNav.classList.add('open');
+  mobileNavBackdrop?.classList.add('open');
   menuToggle?.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
   mobileNavClose?.focus();
@@ -22,13 +24,14 @@ function openMobileNav() {
 function closeMobileNav() {
   if (!mobileNav) return;
   mobileNav.classList.remove('open');
+  mobileNavBackdrop?.classList.remove('open');
   menuToggle?.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
   menuToggle?.focus();
 }
 menuToggle?.addEventListener('click', openMobileNav);
 mobileNavClose?.addEventListener('click', closeMobileNav);
-mobileNav?.addEventListener('click', (e) => { if (e.target === mobileNav) closeMobileNav(); });
+mobileNavBackdrop?.addEventListener('click', closeMobileNav);
 mobileNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileNav));
 
 // Search panel: simple client-side search over a small real index
@@ -41,7 +44,7 @@ let searchIndex = null;
 async function loadSearchIndex() {
   if (searchIndex) return searchIndex;
   try {
-    const res = await fetch('assets/search-index.json');
+    const res = await fetch('/csa-xenia/assets/search-index.json');
     searchIndex = await res.json();
   } catch (err) {
     searchIndex = [];
@@ -173,6 +176,111 @@ if (backToTop) {
 document.querySelectorAll('.current-year').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
+
+// Events calendar: real month grid built from assets/calendar-events.json
+const calendarEl = document.querySelector('.calendar');
+if (calendarEl) {
+  const grid = calendarEl.querySelector('#calendar-grid');
+  const monthLabel = calendarEl.querySelector('#calendar-month-label');
+  const eventList = calendarEl.querySelector('#calendar-event-list');
+  const prevBtn = calendarEl.querySelector('#calendar-prev');
+  const nextBtn = calendarEl.querySelector('#calendar-next');
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const today = new Date();
+  let events = [];
+  let viewYear = today.getFullYear();
+  let viewMonth = today.getMonth();
+
+  fetch('/csa-xenia/assets/calendar-events.json')
+    .then((res) => res.json())
+    .then((data) => {
+      events = data;
+      const upcoming = events.find((ev) => new Date(ev.date + 'T00:00:00') >= new Date(today.getFullYear(), today.getMonth(), today.getDate()));
+      if (upcoming) {
+        const d = new Date(upcoming.date + 'T00:00:00');
+        viewYear = d.getFullYear();
+        viewMonth = d.getMonth();
+      }
+      renderCalendar();
+    })
+    .catch(() => renderCalendar());
+
+  function eventsFor(year, month) {
+    return events.filter((ev) => {
+      const d = new Date(ev.date + 'T00:00:00');
+      return d.getFullYear() === year && d.getMonth() === month;
+    }).sort((a, b) => a.date.localeCompare(b.date));
+  }
+
+  function renderCalendar() {
+    if (!grid || !monthLabel) return;
+    monthLabel.textContent = `${monthNames[viewMonth]} ${viewYear}`;
+    grid.innerHTML = '';
+    ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach((d) => {
+      const el = document.createElement('div');
+      el.className = 'calendar-weekday';
+      el.textContent = d;
+      grid.appendChild(el);
+    });
+    const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+    const monthEvents = eventsFor(viewYear, viewMonth);
+    for (let i = 0; i < firstDay; i++) {
+      const el = document.createElement('div');
+      el.className = 'calendar-day empty';
+      grid.appendChild(el);
+    }
+    for (let day = 1; day <= daysInMonth; day++) {
+      const el = document.createElement('div');
+      el.className = 'calendar-day';
+      const iso = `${viewYear}-${String(viewMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      const dayEvents = monthEvents.filter((ev) => ev.date === iso);
+      const isToday = viewYear === today.getFullYear() && viewMonth === today.getMonth() && day === today.getDate();
+      if (isToday) el.classList.add('is-today');
+      const num = document.createElement('span');
+      num.textContent = String(day);
+      el.appendChild(num);
+      if (dayEvents.length) {
+        el.classList.add('has-event');
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('role', 'button');
+        el.setAttribute('aria-label', `${monthNames[viewMonth]} ${day}: ${dayEvents.map((e) => e.title).join(', ')}`);
+        const dot = document.createElement('span');
+        dot.className = 'calendar-dot';
+        el.appendChild(dot);
+        const jump = () => {
+          const target = eventList?.querySelector(`[data-date="${iso}"]`);
+          target?.scrollIntoView({ block: 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' });
+        };
+        el.addEventListener('click', jump);
+        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(); } });
+      }
+      grid.appendChild(el);
+    }
+    if (eventList) {
+      if (monthEvents.length === 0) {
+        eventList.innerHTML = '<p class="calendar-empty-note">No events scheduled this month yet.</p>';
+      } else {
+        eventList.innerHTML = monthEvents.map((ev) => {
+          const d = new Date(ev.date + 'T00:00:00');
+          const label = `${monthNames[viewMonth].slice(0, 3)} ${d.getDate()}`;
+          return `<div class="calendar-event-item" data-date="${ev.date}"><span class="calendar-event-date">${label}</span><span>${ev.title}</span></div>`;
+        }).join('');
+      }
+    }
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    viewMonth -= 1;
+    if (viewMonth < 0) { viewMonth = 11; viewYear -= 1; }
+    renderCalendar();
+  });
+  nextBtn?.addEventListener('click', () => {
+    viewMonth += 1;
+    if (viewMonth > 11) { viewMonth = 0; viewYear += 1; }
+    renderCalendar();
+  });
+}
 
 // Form submission feedback (no backend yet; confirms the intent honestly)
 document.querySelectorAll('form[data-form-name]').forEach((form) => {

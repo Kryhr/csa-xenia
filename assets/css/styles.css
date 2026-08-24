@@ -288,7 +288,13 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 @media (max-width: 900px) {
   .news-feature-grid, .achievement-grid { grid-template-columns: 1fr; }
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-6); }
   .header-nav { display: none; }
   .menu-toggle { display: inline-flex; }
   .header-grid { grid-template-columns: 1fr auto; }
+}
+
+@media (max-width: 480px) {
+  .header-actions { gap: var(--space-2); }
+  .header-actions .btn { padding: var(--space-2) var(--space-3); font-size: 0.85rem; }
 }

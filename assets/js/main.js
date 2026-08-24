@@ -210,7 +210,6 @@ if (calendarEl) {
 
   const upcomingPanel = calendarEl.querySelector('.calendar-upcoming');
   const upcomingList = calendarEl.querySelector('#calendar-upcoming-list');
-  const dayDetail = calendarEl.querySelector('#calendar-day-detail');
 
   fetch('/csa-xenia/assets/calendar-events.json')
     .then((res) => res.json())
@@ -252,8 +251,6 @@ if (calendarEl) {
     }).sort((a, b) => a.date.localeCompare(b.date));
   }
 
-  const hint = calendarEl.querySelector('.calendar-hint');
-
   function renderCalendar() {
     if (!grid || !monthLabel) return;
     monthLabel.textContent = `${monthNames[viewMonth]} ${viewYear}`;
@@ -268,8 +265,6 @@ if (calendarEl) {
     const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
     const monthEvents = eventsFor(viewYear, viewMonth);
     renderUpcoming(monthEvents);
-    if (dayDetail) dayDetail.hidden = true;
-    if (hint) hint.style.display = monthEvents.length ? '' : 'none';
     for (let i = 0; i < firstDay; i++) {
       const el = document.createElement('div');
       el.className = 'calendar-day empty';
@@ -287,24 +282,15 @@ if (calendarEl) {
       el.appendChild(num);
       if (dayEvents.length) {
         el.classList.add('has-event');
-        el.setAttribute('tabindex', '0');
-        el.setAttribute('role', 'button');
         const summary = dayEvents.map((e) => e.title).join(', ');
         el.setAttribute('aria-label', `${monthNames[viewMonth]} ${day}: ${summary}`);
         el.setAttribute('title', summary);
-        const dot = document.createElement('span');
-        dot.className = 'calendar-dot';
-        el.appendChild(dot);
-        const showDetail = () => {
-          grid.querySelectorAll('.calendar-day.is-selected').forEach((d) => d.classList.remove('is-selected'));
-          el.classList.add('is-selected');
-          if (!dayDetail) return;
-          const dateLabel = `${monthNames[viewMonth]} ${day}`;
-          dayDetail.innerHTML = dayEvents.map((ev) => `<p><strong>${dateLabel}:</strong> ${ev.title}</p>`).join('');
-          dayDetail.hidden = false;
-        };
-        el.addEventListener('click', showDetail);
-        el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showDetail(); } });
+        const label = document.createElement('span');
+        label.className = 'calendar-day-label';
+        label.textContent = dayEvents.length > 1
+          ? `${dayEvents[0].short || dayEvents[0].title} +${dayEvents.length - 1}`
+          : (dayEvents[0].short || dayEvents[0].title);
+        el.appendChild(label);
       }
       grid.appendChild(el);
     }

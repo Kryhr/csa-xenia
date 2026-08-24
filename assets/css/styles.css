@@ -428,23 +428,17 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-1); text-align: center; }
 .calendar-weekday { min-width: 0; font-size: 0.75rem; color: var(--gray-mid); font-weight: 700; padding: var(--space-2) 0; }
 .calendar-day {
-  position: relative; aspect-ratio: 1; min-width: 0; display: flex; flex-direction: column; align-items: center;
-  justify-content: flex-start; gap: 2px; padding: var(--space-2) var(--space-1); border-radius: var(--radius-sm);
+  position: relative; min-width: 0; min-height: 64px; display: flex; flex-direction: column; align-items: center;
+  justify-content: flex-start; gap: 2px; padding: var(--space-2) 2px; border-radius: var(--radius-sm);
   font-size: 0.85rem; color: var(--ink);
 }
 .calendar-day.empty { visibility: hidden; }
 .calendar-day.is-today { border: 1px solid var(--teal); font-weight: 700; }
-.calendar-day.has-event { background: var(--gray-light); cursor: pointer; font-weight: 700; }
-.calendar-day.has-event:hover { background: var(--teal-tint, #e3f2f0); }
-.calendar-dot { width: 5px; height: 5px; border-radius: 999px; background: var(--teal); }
-.calendar-day.is-selected { outline: 2px solid var(--teal-dark); }
-.calendar-day-detail {
-  background: var(--teal-tint); border-radius: var(--radius-sm); padding: var(--space-4);
-  margin-top: var(--space-5);
+.calendar-day.has-event { background: var(--teal-tint); font-weight: 700; }
+.calendar-day-label {
+  font-size: 0.62rem; font-weight: 600; color: var(--teal-dark); line-height: 1.15;
+  overflow-wrap: break-word; hyphens: auto; max-width: 100%;
 }
-.calendar-day-detail p { margin: 0; color: var(--ink); font-size: 0.92rem; }
-.calendar-day-detail p + p { margin-top: var(--space-2); }
-.calendar-hint { color: var(--gray-mid); font-size: 0.85rem; margin: var(--space-4) 0 0; }
 .calendar-event-list { margin-top: var(--space-6); }
 .calendar-event-item { display: flex; gap: var(--space-4); padding: var(--space-3) 0; border-top: 1px solid var(--border); border-radius: var(--radius-sm); transition: background-color 400ms ease; }
 .calendar-event-item:first-child { border-top: none; }
@@ -471,6 +465,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .menu-toggle span { display: none; }
   .logo img { height: 32px; }
   .calendar { padding: var(--space-4); }
-  .calendar-day { font-size: 0.75rem; padding: var(--space-1); }
+  .calendar-day { font-size: 0.75rem; padding: var(--space-1); min-height: 56px; }
+  .calendar-day-label { font-size: 0.56rem; }
   .facts-grid { grid-template-columns: 1fr; }
 }

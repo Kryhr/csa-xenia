@@ -310,6 +310,23 @@ button { font-family: inherit; }
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 500ms ease, transform 500ms ease; }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
+/* Card grids (staff, board, events, gallery cards, etc). Was missing
+   display:grid entirely -- every usage set grid-template-columns via an
+   inline style, which does nothing without display:grid, so cards were
+   silently stacking full-width instead of side by side (this is why the
+   staff/board photos rendered enormous: each "card" was really just a
+   full-width block, and its square photo scaled to match). */
+.news-grid { display: grid; gap: var(--space-6); grid-template-columns: repeat(3, 1fr); }
+.news-grid.cols-1 { grid-template-columns: 1fr; }
+.news-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.news-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) {
+  .news-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .news-grid { grid-template-columns: 1fr !important; }
+}
+
 /* News + feature split */
 .news-feature-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-7); align-items: start; }
 .news-feature-grid h2 { font-size: 1.4rem; margin-bottom: var(--space-5); }

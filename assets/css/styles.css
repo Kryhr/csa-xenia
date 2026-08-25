@@ -244,7 +244,6 @@ button { font-family: inherit; }
   background: linear-gradient(180deg, transparent, rgba(0,0,0,0.7) 70%);
   color: #fff; padding: var(--space-8) var(--space-6) var(--space-5);
   font-family: "Space Grotesk", sans-serif; font-size: clamp(1.3rem, 2.6vw, 1.9rem); font-weight: 700;
-  max-width: 32ch;
 }
 .hero-carousel-controls {
   position: absolute; bottom: var(--space-4); right: var(--space-5); z-index: 5;

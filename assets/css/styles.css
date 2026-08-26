@@ -275,30 +275,6 @@ button { font-family: inherit; }
   .hero-carousel-mark { width: 40px; height: 40px; top: var(--space-4); left: var(--space-4); }
 }
 
-/* ---------- Quick links: icon-led shortcuts right below the hero photo,
-   so the first thing after the photo is immediately useful rather than
-   more marketing copy -- real destinations, not filler. ---------- */
-.quick-links { background: #fff; border-bottom: 1px solid var(--border); }
-.quick-links-grid {
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-3);
-  padding: var(--space-5) 0;
-}
-.quick-links-grid a {
-  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
-  text-decoration: none; color: var(--ink); text-align: center; font-size: 0.82rem; font-weight: 600;
-  padding: var(--space-2); border-radius: var(--radius-sm); transition: background-color 140ms ease, color 140ms ease;
-}
-.quick-links-grid a:hover { background: var(--gray-light); color: var(--teal-dark); }
-.quick-links-grid svg { color: var(--teal-dark); }
-
-@media (max-width: 900px) {
-  .quick-links-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 480px) {
-  .quick-links-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
-  .quick-links-grid a { font-size: 0.72rem; }
-}
-
 /* ---------- Facts band ---------- */
 .facts-band { background: var(--teal-tint); padding: var(--space-6) 0; }
 .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); text-align: center; }

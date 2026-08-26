@@ -57,12 +57,14 @@ async function loadSearchIndex() {
   return searchIndex;
 }
 
-function renderSearchResults(query) {
+async function renderSearchResults(query) {
   if (!searchResults) return;
   if (!query.trim()) {
     searchResults.innerHTML = '';
     return;
   }
+  await loadSearchIndex();
+  if (!searchInput || searchInput.value !== query) return;
   const q = query.toLowerCase();
   const matches = (searchIndex || []).filter((item) =>
     item.title.toLowerCase().includes(q) || (item.excerpt || '').toLowerCase().includes(q)

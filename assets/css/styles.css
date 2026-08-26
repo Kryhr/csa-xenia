@@ -9,11 +9,15 @@
 :root {
   --white: #ffffff;
   --gray-light: #f4f6f5;
-  --gray-mid: #6b7570;
+  /* Darkened from #6b7570 -- the original failed WCAG AA (4.5:1) for
+     normal-size body text against --gray-light (4.39:1 measured). */
+  --gray-mid: #636d68;
   --border: #e1e6e3;
   --ink: #1c231f;
   --teal: #2f8f83;
   --teal-dark: #256f66;
+  /* Hover shade for anything whose resting state is --teal-dark. */
+  --teal-darker: #1c5f58;
   --teal-tint: #eaf4f2;
 
   --space-1: 0.25rem;
@@ -140,8 +144,10 @@ button { font-family: inherit; }
   font-weight: 700; text-decoration: none; border: 2px solid transparent; cursor: pointer;
   font-size: 0.92rem; transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease, transform 140ms ease;
 }
-.btn-teal { background: var(--teal); color: #fff; }
-.btn-teal:hover { background: var(--teal-dark); transform: translateY(-1px); }
+/* --teal (not --teal-dark) behind white text only hit 3.91:1, under
+   the 4.5:1 WCAG AA requirement for this button's font size/weight. */
+.btn-teal { background: var(--teal-dark); color: #fff; }
+.btn-teal:hover { background: var(--teal-darker); transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--teal-dark); border-color: var(--teal); }
 .btn-outline:hover { background: var(--teal-tint); }
 .btn:active { transform: scale(0.96); }
@@ -189,7 +195,11 @@ button { font-family: inherit; }
 .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6); }
 .mobile-nav-close { background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; }
 .mobile-nav-group + .mobile-nav-group { margin-top: var(--space-6); }
-.mobile-nav-group h3 { color: rgba(255,255,255,0.5); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-3); }
+/* A plain paragraph, not a heading -- these are visual group labels
+   inside the nav menu, not real content headings, and were showing up
+   as h3s in the page's heading outline before the page's own h1
+   (the mobile-nav markup sits ahead of <main> in the document). */
+.mobile-nav-group p { color: rgba(255,255,255,0.5); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 var(--space-3); }
 .mobile-nav ul { list-style: none; margin: 0; padding: 0; }
 .mobile-nav li + li { margin-top: var(--space-3); }
 .mobile-nav a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 600; font-family: "Space Grotesk", sans-serif; }
@@ -419,7 +429,7 @@ button { font-family: inherit; }
 }
 
 /* CTA band */
-.cta-band { background: var(--teal); color: #fff; padding: var(--space-7) 0; text-align: center; }
+.cta-band { background: var(--teal-dark); color: #fff; padding: var(--space-7) 0; text-align: center; }
 .cta-band h2 { color: #fff; margin-bottom: var(--space-3); }
 .cta-band p { color: rgba(255,255,255,0.9); max-width: 52ch; margin: 0 auto var(--space-6); }
 .cta-band .btn-outline { color: #fff; border-color: #fff; }
@@ -428,7 +438,7 @@ button { font-family: inherit; }
 /* Footer */
 .site-footer { background: #14201c; color: rgba(255,255,255,0.85); padding: var(--space-7) 0 var(--space-5); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: var(--space-6); }
-.footer-grid h4 { color: #fff; font-size: 0.92rem; margin-bottom: var(--space-3); }
+.footer-grid h3 { color: #fff; font-size: 0.92rem; margin-bottom: var(--space-3); }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; }
 .footer-grid li + li { margin-top: var(--space-2); }
 .footer-grid a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: color 140ms ease; }
@@ -520,7 +530,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   background: var(--teal-tint); border-radius: var(--radius-md); padding: var(--space-5);
   margin-bottom: var(--space-6);
 }
-.calendar-upcoming h3 {
+.calendar-upcoming h2 {
   font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal-dark);
   margin: 0 0 var(--space-3);
 }

@@ -77,7 +77,7 @@ h1, h2, h3, h4 {
   font-weight: 700; line-height: 1.2; margin: 0; color: var(--ink);
 }
 a { color: var(--teal-dark); }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 button { font-family: inherit; }
 
 @media (prefers-reduced-motion: reduce) {

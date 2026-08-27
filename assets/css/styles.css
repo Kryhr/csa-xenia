@@ -434,6 +434,8 @@ button { font-family: inherit; }
 .cta-band p { color: rgba(255,255,255,0.9); max-width: 52ch; margin: 0 auto var(--space-6); }
 .cta-band .btn-outline { color: #fff; border-color: #fff; }
 .cta-band .btn-outline:hover { background: rgba(255,255,255,0.15); }
+.btn-white { background: #fff; color: var(--teal-dark); border-color: #fff; }
+.btn-white:hover { background: var(--teal-tint); border-color: var(--teal-tint); transform: translateY(-1px); box-shadow: var(--shadow-1); }
 
 /* Footer */
 .site-footer { background: #14201c; color: rgba(255,255,255,0.85); padding: var(--space-7) 0 var(--space-5); }

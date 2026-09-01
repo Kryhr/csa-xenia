@@ -14,3 +14,8 @@ Plain static HTML/CSS/JS, no build step, hosted on GitHub Pages.
 - `assets/images/` - real photos from the school
 - `assets/documents/` - real PDFs from the school (calendar, supply lists, policy manual, and more)
 - `assets/css/`, `assets/js/` - styles and scripts
+
+
+# About the code 
+
+Most of the code was done in HTML with some CSS for hover features and animations. I will add quick features for Snow days, closings, and news in the future. 
